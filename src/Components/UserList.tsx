@@ -28,7 +28,7 @@ const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
   );
   console.log('Orignal User', User);
   const dispatch = useDispatch<AppDispatch>();
-  const [inform, setInform] = useState(true);
+ 
   //console.log('APi Call', Error);
   //type NAL = NativeStackScreenProps<RootStackParamList, 'UserDetails'>;
   //console.log('Data', User);
@@ -46,7 +46,7 @@ const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
     Alert.alert('Hi', 'Want To delete this user', [
       {
         text: 'Cancel',
-        onPress: () => setInform(false),
+        onPress: () => console.log("Nothing Will show"),
         style: 'cancel',
       },
       {text: 'OK', onPress: () => handelDelete(item)},
@@ -54,8 +54,8 @@ const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
   };
 
   const handelDelete = (item: any) => {
-    setInform(true);
-    if (inform ) {
+   
+    if (item.id ) {
       const filterItem = User.data.filter(
         (itemOfUser: any) => itemOfUser.id !== item.id,
       );
