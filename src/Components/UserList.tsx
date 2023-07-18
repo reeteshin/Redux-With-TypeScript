@@ -19,6 +19,7 @@ import {RootStackParamList} from '../StackNavigation/StackNavigation';
 import {useNetInfo} from '@react-native-community/netinfo';
 import {SUCCESS} from '../Redux/ActionType';
 import {Success} from '../Redux/Action';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
   //const navigation = useNavigation()
@@ -54,7 +55,7 @@ const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
 
   const handelDelete = (item: any) => {
     setInform(true);
-    if (inform) {
+    if (inform ) {
       const filterItem = User.data.filter(
         (itemOfUser: any) => itemOfUser.id !== item.id,
       );
@@ -87,12 +88,8 @@ const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
                         <Text style={{color: 'black'}}>{item.name}</Text>
                         <Text style={{color: 'black'}}>{item.email}</Text>
                       </View>
-                      <TouchableOpacity style={{marginTop:40,marginRight:20}}>
-                        <Button
-                          title="Delete"
-                          color={"lightgreen"}
-                          onPress={() => handelAlert(item)}
-                        />
+                      <TouchableOpacity style={{marginTop:40,marginRight:20}}  onPress={() => handelAlert(item)}>
+                        <Icon name='delete' size={24} color={"black"}/>
                       </TouchableOpacity>
                     </View>
                   </TouchableOpacity>
