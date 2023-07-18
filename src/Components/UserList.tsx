@@ -28,7 +28,7 @@ const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
   );
   console.log('Orignal User', User);
   const dispatch = useDispatch<AppDispatch>();
-  const [inform, setInform] = useState(false);
+  const [inform, setInform] = useState(true);
   //console.log('APi Call', Error);
   //type NAL = NativeStackScreenProps<RootStackParamList, 'UserDetails'>;
   //console.log('Data', User);
