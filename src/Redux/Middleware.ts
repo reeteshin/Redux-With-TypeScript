@@ -5,6 +5,7 @@ import { Dispatch } from "redux";
 export const ApiMiddlware = ()=>{
     return async (dispatch:Dispatch)=>{
             dispatch(FtechUserRequested());
+            
             axios.get("https://jsonplaceholder.typicode.com/users").then((responce)=>{
                     dispatch(Success(responce))
             }).catch((error)=>{
