@@ -5,10 +5,14 @@ import AnimatedLottieView from 'lottie-react-native';
 const NetworkError = () => {
   const path = '../assets/NetworkError.json';
   return (
+    <>
     <View
-      style={{height: 250, width: 300, marginTop: '50%', alignSelf: 'center'}}>
+      style={{height: "50%",width:"70%", marginTop: '40%', alignSelf: 'center',marginBottom:40,flexDirection:'column-reverse'}}>
       <AnimatedLottieView source={require(path)} autoPlay loop />
+
     </View>
+      <Text style={{color:'darkblue',fontWeight:'bold',textAlign:'center',marginTop:20}}>Please Turn On The Internet Conection</Text>
+        </>
   );
 };
 
