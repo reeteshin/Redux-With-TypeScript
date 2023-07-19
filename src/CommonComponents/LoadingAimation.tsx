@@ -6,8 +6,7 @@ const LoadingAimation = () => {
   const path = '../assets/LoadingAnimation.json';
 
   return (
-    <View
-      style={{height: 250, width: 300, marginTop: '50%', alignSelf: 'center'}}>
+    <View style={styles.LoadingAimationStyle}>
       <AnimatedLottieView source={require(path)} autoPlay loop />
     </View>
   );
@@ -15,4 +14,11 @@ const LoadingAimation = () => {
 
 export default LoadingAimation;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  LoadingAimationStyle: {
+    height: 250,
+    width: 300,
+    marginTop: '50%',
+    alignSelf: 'center',
+  },
+});
