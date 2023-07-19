@@ -32,18 +32,18 @@ const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
   //console.log('APi Call', Error);
   //type NAL = NativeStackScreenProps<RootStackParamList, 'UserDetails'>;
   //console.log('Data', User);
-  // const InternetInfo =  useNetInfo()
-  // console.log("Info",InternetInfo.isConnected)
+  const InternetInfo =  useNetInfo()
+  console.log("Info",InternetInfo.isConnected)
 
-  //   useEffect(()=>{
-  //     dispatch(ApiMiddlware());
-  //   },[InternetInfo.isConnected]) //true
+    useEffect(()=>{
+      dispatch(ApiMiddlware());
+    },[InternetInfo.isConnected]) //true
 
   useEffect(() => {
     dispatch(ApiMiddlware());
   }, []);
   const handelAlert = (item: any) => {
-    Alert.alert('Hi', 'Want To delete this user', [
+    Alert.alert('Hi', 'Do you want to delete this User ?', [
       {
         text: 'Cancel',
         onPress: () => console.log("Nothing Will show"),
