@@ -1,14 +1,12 @@
 import {
   Alert,
-  Button,
   FlatList,
-  Modal,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {ApiMiddlware} from '../Redux/Middleware';
 import {AppDispatch, RootState} from '../Redux/Store';
@@ -38,11 +36,14 @@ const UserList = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
 
   useEffect(() => {
     dispatch(ApiMiddlware());
-  }, [(InternetInfo.isConnected) || (User.data?.length===0)   ]); 
-
-  useEffect(() => {
+  }, [ InternetInfo.isConnected ]); 
+  useEffect(()=>{
     dispatch(ApiMiddlware());
-  }, []);
+  },[User.data?.length===0])
+
+  // useEffect(() => {
+  //   dispatch(ApiMiddlware());
+  // }, []);
   const handelAlert = (item: any) => {
     Alert.alert('Warn !!!', 'Do you want to delete this User ?', [
       {
